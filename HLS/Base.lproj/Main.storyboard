@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HLS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig4-Yb-duv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QP8-0U-HM8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Laj-Ly-Mk4"/>
+                                </connections>
+                            </pickerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyz-cv-JJv">
+                                <rect key="frame" x="20" y="343" width="374" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dyz-cv-JJv" secondAttribute="height" multiplier="16:9" id="SeU-fD-fEF"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="Ugx-Me-Big" kind="embed" id="IDR-8h-rCM"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not capturing video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-Ni-gDo">
+                                <rect key="frame" x="20" y="561" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VCo-Ni-gDo" firstAttribute="top" secondItem="dyz-cv-JJv" secondAttribute="bottom" constant="8" symbolic="YES" id="0uQ-MS-mGC"/>
+                            <constraint firstItem="Ig4-Yb-duv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P96-t2-Mre"/>
+                            <constraint firstItem="VCo-Ni-gDo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SMk-uI-ncO"/>
+                            <constraint firstItem="dyz-cv-JJv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UeZ-Zj-cni"/>
+                            <constraint firstItem="Ig4-Yb-duv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y2J-PI-LnG"/>
+                            <constraint firstItem="dyz-cv-JJv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aHx-oh-HGs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VCo-Ni-gDo" secondAttribute="trailing" constant="20" id="hAy-bL-csB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyz-cv-JJv" secondAttribute="trailing" constant="20" id="lVe-ao-u4O"/>
+                            <constraint firstItem="Ig4-Yb-duv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zBO-gI-HfI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captureLabel" destination="VCo-Ni-gDo" id="A6a-Gj-cWi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="98"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="FMu-2a-wlv">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Ugx-Me-Big" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UpI-m3-SvH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="280"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
